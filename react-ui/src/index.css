@@ -1,0 +1,13 @@
+body {
+    line-height: 2;
+}
+.test-btn {
+    background-color: #fff;
+    padding: 15px;
+    margin-left: 15px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+.text-to-center{
+    text-align: center;
+}

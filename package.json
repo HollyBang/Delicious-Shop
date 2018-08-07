@@ -1,11 +1,30 @@
 {
-  "name": "delicious-shop",
+  "name": "Delicious-Shop-server",
   "version": "1.0.0",
-  "description": "online shop project",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "Delicious-Shop",
+  "engines": {
+    "node": "8.9.x"
   },
-  "author": "",
-  "license": "ISC"
+  "scripts": {
+    "start": "node server",
+    "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "react-ui/node_modules"
+  ],
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.heroku.com/cryptic-atoll-54865.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "react"
+  ],
+  "license": "MIT",
+  "devDependencies": {}
 }
