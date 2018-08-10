@@ -7,10 +7,7 @@
   },
   "scripts": {
     "start": "node server",
-    "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
-    "client": "cd react-ui && npm start",
-    "server": "nodemon server/index",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "cacheDirectories": [
     "node_modules",
@@ -29,8 +26,5 @@
     "react"
   ],
   "license": "MIT",
-  "devDependencies": {
-    "concurrently": "^3.6.1",
-    "nodemon": "^1.18.3"
-  }
+  "devDependencies": {}
 }
