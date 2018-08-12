@@ -2,23 +2,23 @@ const express = require('express');
 const path = require('path');
 const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
-
+const router = express.Router();
 const PORT = process.env.PORT || 5000;
 
 // Multi-process to utilize all CPU cores.
-if (cluster.isMaster) {
-  console.error(`Node cluster master ${process.pid} is running`);
+// if (cluster.isMaster) {
+//   console.error(`Node cluster master ${process.pid} is running`);
 
-  // Fork workers.
-  for (let i = 0; i < numCPUs; i++) {
-    cluster.fork();
-  }
+//   // Fork workers.
+//   for (let i = 0; i < numCPUs; i++) {
+//     cluster.fork();
+//   }
 
-  cluster.on('exit', (worker, code, signal) => {
-    console.error(`Node cluster worker ${worker.process.pid} exited: code ${code}, signal ${signal}`);
-  });
+//   cluster.on('exit', (worker, code, signal) => {
+//     console.error(`Node cluster worker ${worker.process.pid} exited: code ${code}, signal ${signal}`);
+//   });
 
-} else {
+// } else {
   const app = express();
 
   // Priority serve any static files.
@@ -26,8 +26,12 @@ if (cluster.isMaster) {
 
   // Answer API requests.
   app.get('/api', function (req, res) {
-    res.set('Content-Type', 'application/json');
-    res.send('{"message":"Hello from the custom server!"}');
+    // res.set('Content-Type', 'application/json');
+    res.send({
+      "test": "lolo",
+      "test2": "kek",
+      "test3": "cheburek"
+    });
   });
 
   // All remaining requests return the React app, so it can handle routing.
@@ -38,4 +42,4 @@ if (cluster.isMaster) {
   app.listen(PORT, function () {
     console.error(`Node cluster worker ${process.pid}: listening on port ${PORT}`);
   });
-}
+// }

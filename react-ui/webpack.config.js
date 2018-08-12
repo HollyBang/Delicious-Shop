@@ -34,6 +34,18 @@ module.exports = {
       }
     ]
   },
+  devServer: {
+    contentBase: path.join(__dirname, 'react-ui'),
+    proxy: {
+        "/api":{
+            target:"http://localhost:5000/",
+            secure:"false"
+        }
+    },
+    hot:true,
+    historyApiFallback: true,
+    port:3000
+},
   plugins: [
     new HtmlWebPackPlugin({
       template: "./src/index.html",
