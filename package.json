@@ -1,12 +1,12 @@
 {
-  "name": "Delicious-Shop-server",
+  "name": "deliciousshopserver",
   "version": "1.0.0",
   "description": "Delicious-Shop",
   "engines": {
     "node": "8.9.x"
   },
   "scripts": {
-    "start": "concurrently \"node ./server/index.js\" \"cd react-ui && npm start\"",
+    "dev": "concurrently \"nodemon ./server/index.js\" \"cd react-ui && npm start\"",
     "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "cacheDirectories": [
@@ -27,6 +27,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "concurrently": "^3.6.1"
+    "concurrently": "^3.6.1",
+    "nodemon": "^1.18.3"
   }
 }
