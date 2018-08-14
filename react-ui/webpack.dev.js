@@ -14,7 +14,8 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
@@ -23,22 +24,16 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        use: [{
-          loader: "html-loader",
-          options: {
-            minimize: true,
-            removeComments: true,
-            collapseWhitespace: true
+        use: [
+          {
+            loader: "html-loader",
+            options: { minimize: true }
           }
-        }]
+        ]
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
-        // options: {
-        //   modules: true,
-        //   localIdentName: '[path][name]__[local]--[hash:base64:5]'
-        // }
+        use: [MiniCssExtractPlugin.loader, "css-loader"]
       },
       {
         test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
@@ -46,27 +41,26 @@ module.exports = {
     }
     ]
   },
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: true
-      }),
-      new OptimizeCSSAssetsPlugin({})
-    ]
-  },
+  devServer: {
+    contentBase: path.join(__dirname, 'react-ui'),
+    proxy: {
+        "/api":{
+            target:"http://localhost:5000/",
+            secure:"false"
+        }
+    },
+    hot:true,
+    historyApiFallback: true,
+    port:3000
+},
   plugins: [
     new HtmlWebPackPlugin({
       template: "./public/index.html",
-      filename: "index.html",
+      filename: "index.html"
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css"
-    }),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    }),
+    })
   ]
 };

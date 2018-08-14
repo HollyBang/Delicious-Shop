@@ -2,6 +2,7 @@ import React,{Component}  from  'react';
 import ReactDom from 'react-dom';
 import './index.css';
 import App from './App.js';
+import '../public/favicon.ico';
 
 import { Provider } from 'react-redux'
 import { applyMiddleware, createStore } from 'redux'
