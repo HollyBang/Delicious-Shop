@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ComponentA from "./component/componentA"
 import ComponentB from "./component/componentB"
+import ImgUpload from "./component/ImgUpload"
 
 class App extends Component {
     constructor() {
@@ -38,8 +39,9 @@ class App extends Component {
 
         return (
             <div>
-                <div className="heroku-test">Я ТЕБЕ ПОРВУ СКАТЫНА!!!</div>
+                <div className="heroku-test">Test test</div>
             {test}
+            <ImgUpload />
         <ComponentA />
         <ComponentB />
             </div>

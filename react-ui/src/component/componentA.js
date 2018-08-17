@@ -7,6 +7,7 @@ const componentA = (props) => {
     return (
         <div className="text-to-center">
             HELLO FROM component A
+            <img src={props.url} />
             <button className="test-btn" onClick={props.test}>{props.yourtest}</button>
         </div>
     );
@@ -14,6 +15,7 @@ const componentA = (props) => {
 const mapStateToProps = state => {
     return {
         yourtest: state.test,
+        url: state.imgUpload.url
     };
 };
 const mapDispatchToProps = (dispatch) => bindActionCreators({

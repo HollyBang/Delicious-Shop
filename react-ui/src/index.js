@@ -1,3 +1,4 @@
+import "babel-polyfill";
 import React,{Component}  from  'react';
 import ReactDom from 'react-dom';
 import './index.css';
@@ -10,14 +11,21 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import logger from 'redux-logger'
 import thunk from 'redux-thunk'
 import rootReducer from './reducers/rootReducer'
+import createSagaMiddleware from 'redux-saga';
 
-const middleWare = [logger, thunk]
+
+import rootSaga from './sagas/rootSagas';
+
+const sagaMiddleware = createSagaMiddleware();
+
+const middleWare = [logger, sagaMiddleware]
 
 const store = createStore(
     rootReducer,
   {},
   composeWithDevTools(applyMiddleware(...middleWare)),
 )
+sagaMiddleware.run(rootSaga);
 
 ReactDom.render(
     <Provider store = {store}><App /></Provider>,

@@ -7,7 +7,7 @@ const path = require('path')
 
 module.exports = {
   entry: [
-    './src/index.js'
+    "babel-polyfill", './src/index.js'
   ],
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -47,7 +47,11 @@ module.exports = {
         "/api":{
             target:"http://localhost:5000/",
             secure:"false"
-        }
+        },
+        "/image/upload":{
+          target:"http://localhost:5000/",
+          secure:"false"
+      }
     },
     hot:true,
     historyApiFallback: true,
