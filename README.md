@@ -4,7 +4,7 @@ Amazing online shop.
 
 ### Demo
 
-[delicious-shop](https://delicious-shop.herokuapp.com/) - Hosted on heroku.
+[Delicious-shop](https://delicious-shop.herokuapp.com/) - Hosted on heroku.
 
 ### Installing
 
@@ -26,11 +26,7 @@ npm i
 ## Getting Started
 
 ```
-cd server
-nodemon index.js
-
-cd react-ui
-npm start
+npm run dev
 ```
 
 ## Built With
