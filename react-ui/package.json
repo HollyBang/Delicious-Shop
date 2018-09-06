@@ -17,7 +17,7 @@
     "start": "webpack-dev-server --hot --inline --mode development --open --config webpack.dev.js",
     "build": "webpack --mode production",
     "test": "jest",
-    "test:watch": "jest --watch",
+    "test:watch": "jest --onlyChanged --watch",
     "test:coverage": "jest --coverage"
   },
   "keywords": [],
