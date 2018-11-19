@@ -6,7 +6,7 @@ import { test } from '../actions/action_test'
 const componentA = (props) => {
     return (
         <div className="text-to-center">
-            HELLO FROM component A
+            HELLO FROM component A_TESSST
             <img src={props.url} />
             <button className="test-btn" onClick={props.test}>{props.yourtest}</button>
         </div>
