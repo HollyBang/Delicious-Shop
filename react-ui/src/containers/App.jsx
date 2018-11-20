@@ -19,7 +19,7 @@ class App extends Component {
     }
     render() {
         return (
-            <div class="main-app__wrapper">
+            <div className="main-app__wrapper">
             <Navbar/>
             <Route exact path="/" component={StartPage} />
             <Route exact path="/store" component={StorePage} />

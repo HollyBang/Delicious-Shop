@@ -7,13 +7,13 @@ const navbar = () => {
     return (
         <Fragment>
             <NavTitle />
-            <nav class="navbar-1">
-                <ul class="navbar-1__list">
-                    <li class="navbar-1__item"><Link class="navbar-1__link" to="/">Main</Link></li>
-                    <li class="navbar-1__item"><Link class="navbar-1__link" to="/store">Store</Link></li>
-                    <li class="navbar-1__item"><Link class="navbar-1__link" to="/delivery">Delivery</Link></li>
-                    <li class="navbar-1__item"><Link class="navbar-1__link" to="contact">About Us</Link></li>
-                    <li class="navbar-1__item"><Link class="navbar-1__link" to="#">Instagram</Link></li>
+            <nav className="navbar-1">
+                <ul className="navbar-1__list">
+                    <li className="navbar-1__item"><Link className="navbar-1__link" to="/">Main</Link></li>
+                    <li className="navbar-1__item"><Link className="navbar-1__link" to="/store">Store</Link></li>
+                    <li className="navbar-1__item"><Link className="navbar-1__link" to="/delivery">Delivery</Link></li>
+                    <li className="navbar-1__item"><Link className="navbar-1__link" to="contact">About Us</Link></li>
+                    <li className="navbar-1__item"><Link className="navbar-1__link" to="#">Instagram</Link></li>
                 </ul>
             </nav>
         </Fragment>
