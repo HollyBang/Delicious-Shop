@@ -9,10 +9,12 @@ class StartPage extends Component {
         return (
             <div className="main-content__wrapper">
                 <StartSlider />
+                <h3 className="main-content__title">Our Products</h3>
                 <StartPageGrid>
-                    <ProductItem grid="3-columns" />
-                    <ProductItem grid="3-columns" />
-                    <ProductItem grid="3-columns" />
+                    <ProductItem grid="product-item__columns_4" />
+                    <ProductItem grid="product-item__columns_4" />
+                    <ProductItem grid="product-item__columns_4" />
+                    <ProductItem grid="product-item__columns_4" />
                 </StartPageGrid>
 
             </div>
