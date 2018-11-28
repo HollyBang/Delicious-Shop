@@ -5,6 +5,27 @@ import './startPage.css';
 import ProductItem from '../../component/ProductItem/productItem'
 
 class StartPage extends Component {
+    constructor() {
+        super();
+        this.state = {
+            myData: {},
+            flag: false
+        }
+    }
+    componentDidMount() {
+        fetch('/apiFind')
+            .then(response => {
+                console.log(response);
+                return response.json();
+            })
+            .then((data) => {
+             
+                this.setState({
+                    myData: data
+                });
+                console.log('PRODUCT DATA FROM API',data);
+            });
+    }
     render() {
         return (
             <div className="main-content__wrapper">
