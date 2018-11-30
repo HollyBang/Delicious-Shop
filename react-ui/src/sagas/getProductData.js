@@ -16,6 +16,6 @@ export function* createRequest() {
         yield put({ type: GET_PRODUCT_DATA_FAILURE  });
     }
 }
-export default function* getProductDataToMain() {
+export default function* getProductData() {
     yield takeEvery(GET_PRODUCT_DATA, createRequest);
 }

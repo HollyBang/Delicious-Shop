@@ -7,7 +7,7 @@ import ProductItem from '../../component/ProductItem/productItem'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 
-import { getProductDataToMain } from '../../actions/action_getProductDataToMain'
+import { getProductData } from '../../actions/action_getProductData'
 
 class StartPage extends Component {
     constructor(props) {
@@ -18,8 +18,8 @@ class StartPage extends Component {
         }
     }
     componentDidMount() {
-        const { getProductDataToMain } = this.props
-        getProductDataToMain();
+        const { getProductData } = this.props
+        getProductData();
     }
     shouldComponentUpdate(nextProps) {
         if(this.props.ProductListOnMain.productItemMainPage !== nextProps.ProductListOnMain.productItemMainPage) {
@@ -46,11 +46,11 @@ class StartPage extends Component {
 
 const mapStateToProps = state => {
     return {
-        ProductListOnMain: state.getProductDataToMain,
+        ProductListOnMain: state.getProductData,
     };
 };
 const mapDispatchToProps = (dispatch) => bindActionCreators({
-    getProductDataToMain,
+    getProductData,
 
 }, dispatch)
 

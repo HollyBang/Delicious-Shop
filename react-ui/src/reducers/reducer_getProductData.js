@@ -4,7 +4,7 @@ const initialState = {
     productItemMainPage: []
 }
 
-const getProductDataToMain = (state = initialState, action) => {
+const getProductData = (state = initialState, action) => {
     const { type, payload } = action;
     switch (type) {
         // case GET_PRODUCT_DATA_BEGIN:
@@ -19,4 +19,4 @@ const getProductDataToMain = (state = initialState, action) => {
     }
 };
 
-export default getProductDataToMain;
+export default getProductData;
