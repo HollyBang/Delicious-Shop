@@ -1,5 +1,7 @@
+import { GET_PRODUCT_DATA  } from "../constants/constants";
+
 export function getProductDataToMain(){
     return{
-        type:"GET_PRODUCT_DATA_TO_MAIN",
+        type: GET_PRODUCT_DATA,
     }
 }

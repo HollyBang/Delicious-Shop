@@ -18,24 +18,17 @@ class StartPage extends Component {
         }
     }
     componentDidMount() {
-        // fetch('/apiFind')
-        //     .then(response => {
-        //         console.log(response);
-        //         return response.json();
-        //     })
-        //     .then((data) => {
-             
-        //         this.setState({
-        //             myData: data
-        //         });
-        //         console.log('PRODUCT DATA FROM API',data);
-        //     });
         const { getProductDataToMain } = this.props
         getProductDataToMain();
     }
+    shouldComponentUpdate(nextProps) {
+        if(this.props.ProductListOnMain.productItemMainPage !== nextProps.ProductListOnMain.productItemMainPage) {
+            return true;
+        } 
+        return false;
+    }
     render() {
-        const { getProductDataToMain2 } = this.props
-        console.log(getProductDataToMain2)
+        console.log("startPage", this.props)
         return (
             <div className="main-content__wrapper">
                 <StartSlider />
@@ -46,7 +39,6 @@ class StartPage extends Component {
                     <ProductItem grid="product-item__columns_4" />
                     <ProductItem grid="product-item__columns_4" />
                 </StartPageGrid>
-
             </div>
         );
     }
@@ -54,7 +46,7 @@ class StartPage extends Component {
 
 const mapStateToProps = state => {
     return {
-        getProductDataToMain2: state.getProductDataToMain,
+        ProductListOnMain: state.getProductDataToMain,
     };
 };
 const mapDispatchToProps = (dispatch) => bindActionCreators({

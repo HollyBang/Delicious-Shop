@@ -20,11 +20,11 @@ class App extends Component {
     render() {
         return (
             <div className="main-app__wrapper">
-            <Navbar/>
-            <Route exact path="/" component={StartPage} />
-            <Route exact path="/store" component={StorePage} />
-            <Route exact path="/delivery" component={DeliveryPage} />
-            <Route exact path="/contact" component={ContactUsPage} />
+                <Navbar />
+                <Route exact path="/" component={StartPage} />
+                <Route exact path="/store" component={StorePage} />
+                <Route exact path="/delivery" component={DeliveryPage} />
+                <Route exact path="/contact" component={ContactUsPage} />
             </div>
         )
     }
