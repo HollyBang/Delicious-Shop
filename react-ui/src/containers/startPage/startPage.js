@@ -19,7 +19,7 @@ class StartPage extends Component {
     }
     componentDidMount() {
         const { getProductData } = this.props
-        getProductData();
+        getProductData("mainPage");
     }
     shouldComponentUpdate(nextProps) {
         if(this.props.ProductListOnMain.productItemMainPage !== nextProps.ProductListOnMain.productItemMainPage) {
