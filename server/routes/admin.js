@@ -16,7 +16,7 @@ router.post('/login', (req, res) => {
         }
         res.cookie(req.body.email, req.body.password, options)
         res.redirect('/admin/success');
-    } else {F
+    } else {
         res.redirect('/');
     }
 });
