@@ -91,7 +91,7 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 app.set('views', path.resolve(__dirname, 'views'));
-app.use('/admin', express.static(path.resolve(__dirname, 'serverStyles')));
+app.use('/admin', express.static(path.resolve(__dirname, 'serverAssets')));
 
 //routest
 app.use('/', index);

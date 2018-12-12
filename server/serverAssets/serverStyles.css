@@ -1,0 +1,62 @@
+body {
+    line-height: 2;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    color: #565656;
+    margin: 0px;
+}
+p,h1,h2,h3,h4,h5,h6{
+    padding: 0px;
+    margin: 0px;
+}
+.login-wrapper {
+    background: url(https://images.unsplash.com/photo-1504400739660-22ebeb14f00a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.input {
+    background: transparent;
+    width: 400px;
+    height: 50px;
+    outline: none;
+    border: 1px solid #fff;
+    margin-bottom: 11px;
+    color: #fff;
+    padding: 5px;
+    font-size: 1.5rem;
+    transition: 1s all;
+}
+.input:focus {
+    border: 1px solid #925c26;
+}
+.btn_submit {
+    width: 100%;
+    padding: 5px;
+    margin: 0px;
+    background: #fff;
+    border: 1px solid #fff;
+    outline: none;
+    color: #925c26;
+    cursor: pointer;
+    font-size: 1.5rem;
+    height: 40px;
+}
+.login__headning{
+    color: #fff;
+    font-size: 2rem;
+}
+.login__subheadning{
+    color: #fff;
+    font-size: 1.7rem;
+}
+.login__link-back {
+    color: #b88343;
+    text-decoration: none;
+}
+.login__link-back:hover {
+    text-decoration: underline;
+}
