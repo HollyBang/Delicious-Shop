@@ -52,7 +52,11 @@ module.exports = {
         "/image/upload":{
           target:"http://localhost:5000/",
           secure:"false"
-      }
+      },
+      "/admin":{
+        target:"http://localhost:5000/",
+        secure:"false"
+    },
     },
     hot:true,
     historyApiFallback: true,

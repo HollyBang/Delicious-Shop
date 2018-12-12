@@ -9,14 +9,23 @@ const cloudinary = require('cloudinary');
 const cloudinaryStorage = require('multer-storage-cloudinary');
 const fs = require('fs');
 
+const exphbs = require('express-handlebars');
+const cookieParser = require('cookie-parser')
+
 const mongoose = require('mongoose');
 
 // LOAD USER MODEL
+require('./models/Admin');
+// LOAD Product_item  MODEL
 require('./models/Product_Item');
+
+
 
 const keys = require('./config/keys');
 
+// LOAD ROUTES
 const index = require('./routes/index');
+const admin = require('./routes/admin');
 
 
 const PORT = process.env.PORT || 5000;
@@ -49,6 +58,8 @@ mongoose.connect(keys.mongoURI)
   .catch(err => console.log(err))
 
 const app = express();
+app.use(cookieParser());
+
 
 let storage = cloudinaryStorage({
   cloudinary: cloudinary,
@@ -72,9 +83,19 @@ app.post('/image/upload', parser.single('selectedFile'), function (req, res) {
   res.json(req.file);
 });
 
+// Handlebars middleware
+// BEWARE! STRANGE CONFIG =)
+app.engine('handlebars', exphbs({
+  defaultLayout: 'main',
+  layoutsDir: path.resolve(__dirname, 'views/layouts')
+}));
+app.set('view engine', 'handlebars');
+app.set('views', path.resolve(__dirname, 'views'));
+app.use('/admin', express.static(path.resolve(__dirname, 'serverStyles')));
+
 //routest
 app.use('/', index);
-
+app.use('/admin', admin);
 
 // MUST BE IN THE BOTTOM!
 app.get('*', function (request, response) {
