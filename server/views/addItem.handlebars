@@ -2,14 +2,14 @@
     <h3 class="addItem__title">Add your item here
         <span class="addItem__arrow">↓</span>
     </h3>
-    <form class='aaaa' action='' method="post">
+    <form class='form' action='' method="post">
         <div class="addItem-input__wrapper">
             <input type="name" class="input addItem-input" name="title" placeholder="Title" required>
             <input type="name" class="input addItem-input" name="description" placeholder="description" required>
         </div>
         <div class="addItem-input__wrapper">
-            <input type="name" class="input addItem-input" name="сategory" placeholder="сategory" required>
-            <input type="name" class="input addItem-input" name="subcategory" placeholder="subcategory" required>
+            <input type="name" class="input addItem-input" name="subcategoryItem" placeholder="subcategoryItem" required>
+             <input type="name" class="input addItem-input" name="categoryItem" placeholder="categoryItem" required>
         </div>
         <div class="addItem-input__wrapper">
             <input type="name" class="input addItem-input" name="price" placeholder="price" required>
@@ -28,18 +28,18 @@
 
 <script>
     document.getElementById("sendData").addEventListener("click", sendData);
-    var form = document.querySelector('.aaaa');
+    var form = document.querySelector('.form');
     var fileInput = document.querySelector('#uploadedImg');
-  
+
     function sendData(e) {
-   
+
         e.preventDefault();
         console.log("sendDATa");
         var formData = new FormData(form);
- 
+
         fetch('/admin/addItem/add', {
             method: 'post',
-            
+
             body: formData
         })
     }

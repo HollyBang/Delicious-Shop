@@ -12,11 +12,7 @@ const ProductItemShema = new Schema({
         type: String,
         required: true,
     },
-    category: {
-        type: String,
-        required: true,
-    },
-    subcategory: {
+    subcategoryItem: {
         type: String,
         required: true,
     },
@@ -32,8 +28,11 @@ const ProductItemShema = new Schema({
         type: String,
         required: true,
     },
-
-    date:{
+    categoryItem: {
+        type: String,
+        required: true,
+    },
+    date: {
         type: Date,
         default: Date.now()
     }
