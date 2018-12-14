@@ -62,6 +62,7 @@
     "babel-polyfill": "^6.26.0",
     "react-router-dom": "^4.3.1",
     "react-slick": "^0.23.2",
+    "react-sticky-el": "^1.0.20",
     "redux-saga": "^0.16.0",
     "slick-carousel": "^1.8.1"
   }

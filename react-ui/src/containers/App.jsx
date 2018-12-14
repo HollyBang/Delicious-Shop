@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { StickyContainer, Sticky } from 'react-sticky';
+import { Route } from 'react-router-dom';
 // import ComponentA from "../component/componentA"
 // import ComponentB from "../component/componentB"
 // import ImgUpload from "../component/ImgUpload"
@@ -6,8 +8,7 @@ import StorePage from "../containers/storePage/storePage";
 import StartPage from "../containers/startPage/startPage";
 import DeliveryPage from "../containers/deliveryPage/deliveryPage";
 import ContactUsPage from "../containers/contactUsPage/contactUs";
-import Navbar from "../layouts/navbar/nav"
-import { Route } from 'react-router-dom'
+import Navbar from "../layouts/navbar/nav";
 
 class App extends Component {
     constructor() {
