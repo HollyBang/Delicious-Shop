@@ -9,6 +9,19 @@ const multer = require('multer');
 const cloudinary = require('cloudinary');
 const cloudinaryStorage = require('multer-storage-cloudinary');
 
+cloudinary.config({
+    cloud_name: 'deliciousshop64',
+    api_key: '668657522175832',
+    api_secret: '8vn0lRyG9IHPsNqBz6_6dWzHQdY'
+  });
+
+let storage = cloudinaryStorage({
+    cloudinary: cloudinary,
+    folder: '', // cloudinary folder where you want to store images, empty is root
+    allowedFormats: ['jpg', 'png'],
+  });
+  
+  var parser = multer({ storage: storage });
 router.get('/', function (req, res) {
     res.render('login');
 });
@@ -31,6 +44,11 @@ router.get('/addItem', (req, res) => {
         res.redirect('/');
     }
 });
+router.post('/addItem/add', parser.single('selectedFile'), function (req, res) {
+    console.log(req.body);
+    console.log(req.file);
+    res.json(req.file);
+  });
 
 
 // router.post('/addItem/add', parser.single('selectedFile'), function (req, res){
