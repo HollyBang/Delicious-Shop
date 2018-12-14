@@ -78,10 +78,6 @@ app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
 app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 
-app.post('/image/upload', parser.single('selectedFile'), function (req, res) {
-  console.log(req.file);
-  res.json(req.file);
-});
 
 // Handlebars middleware
 // BEWARE! STRANGE CONFIG =)
@@ -92,6 +88,12 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 app.set('views', path.resolve(__dirname, 'views'));
 app.use('/admin', express.static(path.resolve(__dirname, 'serverAssets')));
+
+app.post('/admin/addItem/add', parser.single('selectedFile'), function (req, res) {
+  console.log(req.body);
+  console.log(req.file);
+  res.json(req.file);
+});
 
 //routest
 app.use('/', index);

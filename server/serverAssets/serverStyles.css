@@ -60,3 +60,47 @@ p,h1,h2,h3,h4,h5,h6{
 .login__link-back:hover {
     text-decoration: underline;
 }
+
+.addItem-wrapper {
+    background: url(https://images.unsplash.com/photo-1542866789-bb9c9d086a5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.addItem-input {
+    margin: 15px;
+}
+
+.addItem-btn_submit{
+    width: 100%;
+    max-width: 600px;
+    padding: 5px;
+    background: #fff;
+    border: 1px solid #fff;
+    outline: none;
+    color: #925c26;
+    cursor: pointer;
+    font-size: 1.5rem;
+    height: 40px;
+    margin: 0;
+    margin-top: 10px;
+}
+.addItem-btn__wrapper{
+text-align: center;
+}
+#uploadedImg {
+    margin: 15px;
+    color: #e26c1d;
+    border: none;
+    background: #b7530f36;
+}
+.addItem__title {
+    color: #fff;
+    font-size: 3rem;
+}
+.addItem__arrow {
+    color: #fb7b25;
+}

@@ -1,0 +1,47 @@
+<div class="addItem-wrapper">
+    <h3 class="addItem__title">Add your item here
+        <span class="addItem__arrow">↓</span>
+    </h3>
+    <form class='aaaa' action='' method="post">
+        <div class="addItem-input__wrapper">
+            <input type="name" class="input addItem-input" name="title" placeholder="Title" required>
+            <input type="name" class="input addItem-input" name="description" placeholder="description" required>
+        </div>
+        <div class="addItem-input__wrapper">
+            <input type="name" class="input addItem-input" name="сategory" placeholder="сategory" required>
+            <input type="name" class="input addItem-input" name="subcategory" placeholder="subcategory" required>
+        </div>
+        <div class="addItem-input__wrapper">
+            <input type="name" class="input addItem-input" name="price" placeholder="price" required>
+            <input type="name" class="input addItem-input" name="status" placeholder="status" required>
+        </div>
+        <div class="addItem-input__wrapper">
+            {{!--
+            <label class="btn" htmlFor="inputFile">{btnName}</label> --}}
+            <input id="uploadedImg" type="file" name="selectedFile" />
+        </div>
+        <div class="addItem-btn__wrapper">
+            <button id="sendData" class="addItem-btn_submit">Submit</button>
+        </div>
+    </form>
+</div>
+</div>
+<script>
+    document.getElementById("sendData").addEventListener("click", sendData);
+    var form = document.querySelector('.aaaa');
+    console.log(form)
+    var img = document.querySelector('#uploadedImg');
+    function sendData(e) {
+        console.log(img)
+        e.preventDefault();
+        console.log("sendDATa");
+        var formData = new FormData(form);
+        fetch('/admin/addItem/add', {
+            method: 'post',
+            headers: {
+                "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+            },
+            body: JSON.stringify(formData)
+        })
+    }
+</script>

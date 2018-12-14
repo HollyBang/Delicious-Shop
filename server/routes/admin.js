@@ -5,6 +5,10 @@ const mongoose = require('mongoose')
 const Admin = mongoose.model('admin');
 const cookieParser = require('cookie-parser');
 
+const multer = require('multer');
+const cloudinary = require('cloudinary');
+const cloudinaryStorage = require('multer-storage-cloudinary');
+
 router.get('/', function (req, res) {
     res.render('login');
 });
@@ -15,18 +19,24 @@ router.post('/login', (req, res) => {
             httpOnly: true, // The cookie only accessible by the web server
         }
         res.cookie(req.body.email, req.body.password, options)
-        res.redirect('/admin/success');
+        res.redirect('/admin/addItem');
     } else {
         res.redirect('/');
     }
 });
-router.get('/success', (req, res) => {
+router.get('/addItem', (req, res) => {
     if (Object.keys(req.cookies)[0] === "admin@lox.net" && Object.values(req.cookies)[0] === "777") {
-        res.render('succes')
+        res.render('addItem')
     } else {
         res.redirect('/');
     }
 });
+
+
+// router.post('/addItem/add', parser.single('selectedFile'), function (req, res){
+//     console.log(req.body)
+//     console.log(req.file)
+// });
 // TEST ROUT
 // router.get('/admin/add', function (req, res) {
 //     let AdminBody = {
