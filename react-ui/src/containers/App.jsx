@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { StickyContainer, Sticky } from 'react-sticky';
 import { Route } from 'react-router-dom';
 // import ComponentA from "../component/componentA"
 // import ComponentB from "../component/componentB"
