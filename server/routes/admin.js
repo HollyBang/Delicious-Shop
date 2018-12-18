@@ -56,7 +56,8 @@ router.post('/addItem/add', parser.single('selectedFile'), function(req, res) {
         subcategoryItem:req.body.subcategoryItem,
         status:req.body.status,
         price:req.body.price,
-        img:req.file.url
+        img:req.file.url,
+        location:req.body.select
     }
     console.log('created object====>',ProductItemBody)
     new ProductItem(ProductItemBody)

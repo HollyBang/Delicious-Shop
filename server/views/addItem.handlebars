@@ -9,7 +9,7 @@
         </div>
         <div class="addItem-input__wrapper">
             <input type="name" class="input addItem-input" name="subcategoryItem" placeholder="subcategoryItem" required>
-             <input type="name" class="input addItem-input" name="categoryItem" placeholder="categoryItem" required>
+            <input type="name" class="input addItem-input" name="categoryItem" placeholder="categoryItem" required>
         </div>
         <div class="addItem-input__wrapper">
             <input type="name" class="input addItem-input" name="price" placeholder="price" required>
@@ -19,6 +19,10 @@
             {{!--
             <label class="btn" htmlFor="inputFile">{btnName}</label> --}}
             <input id="uploadedImg" type="file" name="selectedFile" />
+            <select class="addItem__location-select" id="addItem__location-select" name="select">
+                <option value="mainPage">Main Page</option>
+                <option value="inCatalog">in Catalog(other solutions)</option>
+            </select>
         </div>
         <div class="addItem-btn__wrapper">
             <button id="sendData" class="addItem-btn_submit">Submit</button>
@@ -32,14 +36,11 @@
     var fileInput = document.querySelector('#uploadedImg');
 
     function sendData(e) {
-
         e.preventDefault();
         console.log("sendDATa");
         var formData = new FormData(form);
-
         fetch('/admin/addItem/add', {
             method: 'post',
-
             body: formData
         })
     }

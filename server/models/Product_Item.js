@@ -35,6 +35,10 @@ const ProductItemShema = new Schema({
     date: {
         type: Date,
         default: Date.now()
+    },
+    location: {
+        type: String,
+        required: true,
     }
 });
 

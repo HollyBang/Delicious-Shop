@@ -20,13 +20,18 @@ router.get('/apiAdd', function (req, res) {
         })
 });
 
-router.get('/apiFind', (req, res) => {
+router.get('/apiFind/:location', (req, res) => {
     console.log('find')
-    ProductItem.find({})
+    console.log('params form react call apiFind',req.params)
+    ProductItem.find({location:req.params.location})
         .then(Product => {
-            res.send(Product);
+            if(Product){
+             res.send(Product);
+            }else{
+                res.send("error");
+            }
+            
         })
-
 });
 
 module.exports = router;

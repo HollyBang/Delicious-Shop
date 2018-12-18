@@ -20,24 +20,26 @@ class StartPage extends Component {
     componentDidMount() {
         const { getProductData } = this.props
         getProductData("mainPage");
+        // getProductData("inCatalog");
+
     }
     shouldComponentUpdate(nextProps) {
-        if(this.props.ProductListOnMain.productItemMainPage !== nextProps.ProductListOnMain.productItemMainPage) {
+        if (this.props.ProductListOnMain.productItemMainPage !== nextProps.ProductListOnMain.productItemMainPage) {
             return true;
-        } 
+        }
         return false;
     }
     render() {
         console.log("startPage", this.props)
+        let maiPageItem = this.props.ProductListOnMain.productItemMainPage.map(data => {
+            return <ProductItem data={data} grid="product-item__columns_4" key={data.date} />
+        })
         return (
             <div className="main-content__wrapper">
                 <StartSlider />
                 <h3 className="main-content__title">Our Products</h3>
                 <StartPageGrid>
-                    <ProductItem grid="product-item__columns_4" />
-                    <ProductItem grid="product-item__columns_4" />
-                    <ProductItem grid="product-item__columns_4" />
-                    <ProductItem grid="product-item__columns_4" />
+                    {maiPageItem}
                 </StartPageGrid>
             </div>
         );

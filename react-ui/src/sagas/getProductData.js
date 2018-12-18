@@ -3,9 +3,10 @@ import { GET_PRODUCT_DATA, GET_PRODUCT_DATA_BEGIN, GET_PRODUCT_DATA_SUCCESS, GET
 
 export function* createRequest(action) {
     try {
-        console.log('===CATEGORY===',action.payload.category)
+        let location = action.payload.location;
+        console.log('===CATEGORY===',action.payload.location)
         yield put({ type: GET_PRODUCT_DATA_BEGIN  });
-        let response = yield call(fetch, `/apiFind`);
+        let response = yield call(fetch, `/apiFind/${location}`);
         const productItemMainPage = yield call([response, response.json]);
         yield put({
             type: GET_PRODUCT_DATA_SUCCESS, payload: {
