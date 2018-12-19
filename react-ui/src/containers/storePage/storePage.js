@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import StoreMenu from '../../layouts/storeMenu/storeMenu';
 import ProductItem from '../../component/ProductItem/productItem';
+import './storePage.css';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
@@ -12,7 +13,7 @@ class StorePage extends Component {
     }
     componentDidMount() {
         const { getProductData } = this.props
-        getProductData(null, "Pizza");
+        getProductData(null, "pizza");
     }
     render() {
         console.log('STOREPAGE____', this.props.shopItems)
@@ -20,7 +21,7 @@ class StorePage extends Component {
         if (typeof (this.props.shopItems) != "undefined") {
 
             shopItems = this.props.shopItems.map(data => {
-                return <ProductItem data={data} grid="product-item__columns_4" key={data.date} />
+                return <ProductItem data={data} grid="product-item__columns_3" key={data.date} />
             })
         } else {
             shopItems = "...loading";
@@ -28,7 +29,9 @@ class StorePage extends Component {
         return (
             <div>
                 <StoreMenu />
-                {shopItems}
+                <div className="store-page-grid__wrapper">
+                    {shopItems}
+                </div>
             </div>
         );
     }

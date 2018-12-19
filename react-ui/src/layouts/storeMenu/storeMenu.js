@@ -17,56 +17,53 @@ import { getProductData } from '../../actions/action_getProductData'
 
 const storeMenu = ({ getProductData }) => {
 
-    function findSushi(e) {
+    function fireFilter(e) {
         e.preventDefault();
-        getProductData(null, "sushi")
-    }
-    function findPizza(e) {
-        e.preventDefault();
-        getProductData(null, "Pizza")
+        console.log(e.target.dataset.filter)
+        getProductData(null, e.target.dataset.filter)
     }
     return (
         <div className="menu-wrapper">
             <ul className="menu__list">
                 <li className="menu__item">
-                    <a href="#" onClick={findPizza} className="menu__link">
-                        <img className="menu__img" src={pizza_img} alt="img" />
+                    <a href="#" className="menu__link">
+                        <img onClick={fireFilter} data-filter="pizza" className="menu__img" src={pizza_img} alt="img" />
                         Pizza
                     </a>
                 </li>
                 <li className="menu__item">
-                    <a href="#" className="menu__link">
-                        <img className="menu__img" src={breakfast_img} alt="img" />
+                    <a href="#" className="menu__link"  >
+                        <img className="menu__img" onClick={fireFilter} data-filter="hot_dishes" src={breakfast_img} alt="img" />
                         Hot Dishes
                     </a>
                 </li>
                 <li className="menu__item">
-                    <a href="#" className="menu__link">
-                        <img className="menu__img" src={coctail_img} alt="img" />
+                    <a href="#" className="menu__link" >
+                        <img onClick={fireFilter} data-filter="drink" className="menu__img" src={coctail_img} alt="img" />
                         Drinks
                     </a>
                 </li>
                 <li className="menu__item">
                     <a href="#" className="menu__link">
-                        <img className="menu__img" src={cupcake_img} alt="img" />
+                        <img onClick={fireFilter} className="menu__img" src={cupcake_img} data-filter="cake" alt="img" />
                         Cakes
                     </a>
                 </li>
                 <li className="menu__item">
                     <a href="#" className="menu__link">
-                        <img className="menu__img" src={salad_img} alt="img" />
+                        <img onClick={fireFilter} className="menu__img" src={salad_img} alt="img" data-filter="salad" />
                         Salads
                     </a>
                 </li>
                 <li className="menu__item">
                     <a href="#" className="menu__link">
-                        <img className="menu__img" src={soup_img} alt="img" />
+                        <img onClick={fireFilter} className="menu__img" src={soup_img} data-filter="soup" alt="img" />
                         Soups
                     </a>
                 </li>
                 <li className="menu__item">
-                    <a href="#" onClick={findSushi} className="menu__link">
-                        <img className="menu__img" src={sushi_img} alt="img" />
+                    <a href="#"  className="menu__link" >
+                        <img onClick={fireFilter} className="menu__img" src={sushi_img} alt="img" data-filter="sushi" />
                         Sushi
                     </a>
                 </li>
