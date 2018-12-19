@@ -1,12 +1,47 @@
-import React from 'react';
+import React, { Component } from 'react';
 import StoreMenu from '../../layouts/storeMenu/storeMenu';
+import ProductItem from '../../component/ProductItem/productItem';
 
-const storePage = () => {
-    return (
-        <div>
-           <StoreMenu/>
-        </div>
-    );
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
+
+import { getProductData } from '../../actions/action_getProductData'
+class StorePage extends Component {
+    constructor(props) {
+        super(props);
+    }
+    componentDidMount() {
+        const { getProductData } = this.props
+        getProductData(null, "Pizza");
+    }
+    render() {
+        console.log('STOREPAGE____', this.props.shopItems)
+        let shopItems;
+        if (typeof (this.props.shopItems) != "undefined") {
+
+            shopItems = this.props.shopItems.map(data => {
+                return <ProductItem data={data} grid="product-item__columns_4" key={data.date} />
+            })
+        } else {
+            shopItems = "...loading";
+        }
+        return (
+            <div>
+                <StoreMenu />
+                {shopItems}
+            </div>
+        );
+    }
+}
+
+const mapStateToProps = state => {
+    return {
+        shopItems: state.getProductData.shopItems,
+    };
 };
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+    getProductData,
 
-export default storePage;
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(StorePage);

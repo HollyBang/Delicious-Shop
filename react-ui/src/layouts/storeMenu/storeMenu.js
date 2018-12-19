@@ -9,12 +9,27 @@ import salad_img from '../../assets/img/salad.png'
 import soup_img from '../../assets/img/soup.png'
 import sushi_img from '../../assets/img/sushi.png'
 
-const storeMenu = () => {
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
+
+import { getProductData } from '../../actions/action_getProductData'
+
+
+const storeMenu = ({ getProductData }) => {
+
+    function findSushi(e) {
+        e.preventDefault();
+        getProductData(null, "sushi")
+    }
+    function findPizza(e) {
+        e.preventDefault();
+        getProductData(null, "Pizza")
+    }
     return (
         <div className="menu-wrapper">
             <ul className="menu__list">
                 <li className="menu__item">
-                    <a href="#" className="menu__link">
+                    <a href="#" onClick={findPizza} className="menu__link">
                         <img className="menu__img" src={pizza_img} alt="img" />
                         Pizza
                     </a>
@@ -50,7 +65,7 @@ const storeMenu = () => {
                     </a>
                 </li>
                 <li className="menu__item">
-                    <a href="#" className="menu__link">
+                    <a href="#" onClick={findSushi} className="menu__link">
                         <img className="menu__img" src={sushi_img} alt="img" />
                         Sushi
                     </a>
@@ -60,4 +75,9 @@ const storeMenu = () => {
     );
 };
 
-export default storeMenu;
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+    getProductData,
+
+}, dispatch)
+
+export default connect(null, mapDispatchToProps)(storeMenu);

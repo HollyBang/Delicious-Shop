@@ -21,7 +21,7 @@ router.get('/apiAdd', function (req, res) {
 });
 
 router.get('/apiFind/:location', (req, res) => {
-    console.log('find')
+    console.log('apifindBODY==>',req.params.location)
     console.log('params form react call apiFind',req.params)
     ProductItem.find({location:req.params.location})
         .then(Product => {
@@ -31,6 +31,18 @@ router.get('/apiFind/:location', (req, res) => {
                 res.send("error");
             }
             
+        })
+});
+router.get('/apiFind/filter/:categoryItem', (req, res) => {
+    console.log('apifindfilter=>',req.params.categoryItem)
+    console.log('params form react call filter',req.params)
+    ProductItem.find({categoryItem:req.params.categoryItem})
+        .then(Product => {
+            if(Product){
+             res.send(Product);
+            }else{
+                res.send("error");
+            }
         })
 });
 

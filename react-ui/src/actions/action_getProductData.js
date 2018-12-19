@@ -1,10 +1,11 @@
 import { GET_PRODUCT_DATA  } from "../constants/constants";
 
-export function getProductData(location){
+export function getProductData(location,filter){
     return{
         type: GET_PRODUCT_DATA,
         payload: {
-            location:location
+            location:location,
+            filter:filter
         }
     }
 }
