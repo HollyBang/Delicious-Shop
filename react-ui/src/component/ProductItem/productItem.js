@@ -1,4 +1,6 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
 import './productItem.css';
 
 const productItem = (props) => {
@@ -12,8 +14,10 @@ const productItem = (props) => {
                 <p className="product-item__price">{props.data.price}</p>
             </div>
             <div className="product-item__controls">
-                <a className="product-item__btn" href="#">More</a>
+                {/* <a className="product-item__btn" href="#">More</a> */}
+                <NavLink to={`./${props.id}`} exact>Upload Image</NavLink>
                 <a className="product-item__btn" href="#">Add to bag</a>
+                
             </div>
         </div>
     )
