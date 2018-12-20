@@ -39,8 +39,22 @@ const ProductItemShema = new Schema({
     location: {
         type: String,
         required: true,
+    },
+    id: {
+        type: String,
+        required: true
     }
 });
+ProductItemShema.methods.generateId = function(password) {
+    var id = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  
+    for (var i = 0; i < 7; i++)
+      id += possible.charAt(Math.floor(Math.random() * possible.length));
+  
+    return id;
+  };
+
 
 // create collection and add schema
 

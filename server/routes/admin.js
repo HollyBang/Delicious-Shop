@@ -45,22 +45,26 @@ router.get('/addItem', (req, res) => {
     }
 });
 router.post('/addItem/add', parser.single('selectedFile'), function(req, res) {
+    const ProductItemBody = new ProductItem();
+    
+    ProductItemBody.title = req.body.title;
+    ProductItemBody.description = req.body.description,
+    ProductItemBody.categoryItem = req.body.categoryItem,
+    ProductItemBody.subcategoryItem = req.body.subcategoryItem,
+    ProductItemBody.status = req.body.status,
+    ProductItemBody.price = req.body.price,
+    ProductItemBody.img = req.file.url,
+    ProductItemBody.location = req.body.select
+    
+    ProductItemBody.id = ProductItemBody.generateId();
+
     console.log('req_body====>',req.body);
     console.log('req_file==>',req.file);
     console.log('-----------categoryyyyy=========',req.body.category)
     console.log('-----------title=========',req.body.title)
-    var ProductItemBody = {
-        title:req.body.title,
-        description: req.body.description,
-        categoryItem:req.body.categoryItem,
-        subcategoryItem:req.body.subcategoryItem,
-        status:req.body.status,
-        price:req.body.price,
-        img:req.file.url,
-        location:req.body.select
-    }
+
     console.log('created object====>',ProductItemBody)
-    new ProductItem(ProductItemBody)
+    ProductItemBody
         .save()
         .then(admin => {
             console.log("admin product is added, my Emprah!")
