@@ -4,18 +4,19 @@ import { NavLink } from 'react-router-dom';
 import './productItem.css';
 
 const productItem = (props) => {
-    console.log('DATA', props)
+    // console.log('DATA', props)
+  const { data } = props;
     return (
         <div className={`product-item__wrapper ${props.grid}`}>
-            <img className="product-item__img" src={props.data.img} />
+            <img className="product-item__img" src={data.img} />
             <div className="product-item__content">
-                <h4 className="product-item__title">{props.data.title}</h4>
-                <p className="product-item__description">{props.data.description}</p>
-                <p className="product-item__price">{props.data.price}</p>
+                <h4 className="product-item__title">{data.title}</h4>
+                <p className="product-item__description">{data.description}</p>
+                <p className="product-item__price">{data.price}</p>
             </div>
             <div className="product-item__controls">
                 {/* <a className="product-item__btn" href="#">More</a> */}
-                <NavLink to={`./${props.id}`} exact>Upload Image</NavLink>
+                <NavLink to={`./${data.id}`} exact>More</NavLink>
                 <a className="product-item__btn" href="#">Add to bag</a>
                 
             </div>

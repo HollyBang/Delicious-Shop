@@ -21,7 +21,7 @@ class StorePage extends Component {
         if (typeof (this.props.shopItems) != "undefined") {
 
             shopItems = this.props.shopItems.map(data => {
-                return <ProductItem data={data} grid="product-item__columns_3" key={data.date} />
+                return <ProductItem data={data} grid="product-item__columns_3" key={data.id} />
             })
         } else {
             shopItems = "...loading";

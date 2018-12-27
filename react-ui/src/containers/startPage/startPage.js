@@ -32,7 +32,7 @@ class StartPage extends Component {
     render() {
         console.log("startPage", this.props)
         let maiPageItem = this.props.ProductListOnMain.productItemMainPage.map(data => {
-            return <ProductItem data={data} grid="product-item__columns_4" key={data.date} />
+            return <ProductItem data={data} grid="product-item__columns_4" key={data.id} />
         })
         return (
             <div className="main-content__wrapper">
