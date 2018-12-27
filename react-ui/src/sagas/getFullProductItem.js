@@ -21,6 +21,6 @@ console.log('action GET_FULLPRODUCTITEM_DATA action',action)
         yield put({ type: GET_FULLPRODUCTITEM_DATA_FAILURE });
     }
 }
-export default function* getProductData() {
+export default function* getFullProductItem() {
     yield takeEvery(GET_FULLPRODUCTITEM_DATA, createRequest);
 }
