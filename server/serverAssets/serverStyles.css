@@ -104,3 +104,30 @@ text-align: center;
 .addItem__arrow {
     color: #fb7b25;
 }
+#addItem__category-select {
+    background: transparent;
+    width: 413px;
+    height: 50px;
+    outline: none;
+    border: 1px solid #fff;
+    margin-bottom: 11px;
+    color: grey;
+    padding: 5px;
+    margin: 15px;
+    font-size: 1.5rem;
+    transition: 1s all;
+}
+
+#addItem__location-select{
+    background: transparent;
+    width: 413px;
+    height: 50px;
+    outline: none;
+    border: 1px solid #fff;
+    margin-bottom: 11px;
+    color: grey;
+    padding: 5px;
+    margin: 15px;
+    font-size: 1.5rem;
+    transition: 1s all;
+}

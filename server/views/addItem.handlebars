@@ -9,20 +9,26 @@
         </div>
         <div class="addItem-input__wrapper">
             <input type="name" class="input addItem-input" name="subcategoryItem" placeholder="subcategoryItem" required>
-            <input type="name" class="input addItem-input" name="categoryItem" placeholder="categoryItem" required>
+            <select id="addItem__category-select" name="categoryItem">
+                <option value="pizza">Pizza</option>
+                <option value="hot_dishes">Hot Dishes</option>
+                <option value="drink">Drinks</option>
+                <option value="cake">Cakes</option>
+                <option value="salad">Salads</option>
+                <option value="soup">Soups</option>
+                <option value="sushi">Sushi</option>
+            </select>
         </div>
         <div class="addItem-input__wrapper">
             <input type="name" class="input addItem-input" name="price" placeholder="price" required>
             <input type="name" class="input addItem-input" name="status" placeholder="status" required>
         </div>
         <div class="addItem-input__wrapper">
-            {{!--
-            <label class="btn" htmlFor="inputFile">{btnName}</label> --}}
-            <input id="uploadedImg" type="file" name="selectedFile" />
             <select class="addItem__location-select" id="addItem__location-select" name="select">
                 <option value="mainPage">Main Page</option>
                 <option value="inCatalog">in Catalog(other solutions)</option>
             </select>
+            <input id="uploadedImg" type="file" name="selectedFile" />
         </div>
         <div class="addItem-btn__wrapper">
             <button id="sendData" class="addItem-btn_submit">Submit</button>
