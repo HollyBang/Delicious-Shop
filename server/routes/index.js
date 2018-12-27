@@ -33,6 +33,23 @@ router.get('/apiFind/:location', (req, res) => {
             
         })
 });
+
+router.get('/apiFind/findFullItem/:productId', (req, res) => {
+    console.log('FindFullItem==>',req.params.productId)
+    console.log('params form react call apiFind',req.params)
+
+    ProductItem.find({id:req.params.productId})
+    .then(Product => {
+        if(Product){
+         res.send(Product);
+        }else{
+            res.send("error");
+        }
+        
+    })
+
+});
+
 router.get('/apiFind/filter/:categoryItem', (req, res) => {
     console.log('apifindfilter=>',req.params.categoryItem)
     console.log('params form react call filter',req.params)
