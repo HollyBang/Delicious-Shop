@@ -31,6 +31,8 @@ class FullProductItem extends Component {
           <p className="full-product-item__price">{item.price}</p>
           <p className="full-product-item__status">{item.status}</p>
           <h5 className="full-product-item__description">{item.description}</h5>
+          <p className="full-product-item__faq-text">-Any quesions about deliverey? See FAQ <a className="full-product-item__faq-link" href="#">here</a></p>
+          <p className="full-product-item__phone-text">-Wanna ask smth in real conversation? Our phone number is <span className="full-product-item__phone">+380 093 104 55 66</span></p>
           <div className="full-product-item__buy-wrapper">
           <a href="#" data-itemFullId={item.id} className="full-product-item__buy-btn shake">PUT TO BAG</a>
           </div>

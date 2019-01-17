@@ -11,6 +11,7 @@
     width: 100%;
     display: block;
     max-height: 360px;
+    min-height: 273px;
 }
 .full-product-item__left-block {
     width: 40%;
@@ -53,6 +54,16 @@
     right: 20px;
     position: absolute;
     bottom: 10px;
+}
+.full-product-item__phone-text {
+    margin-bottom: 11%;
+}
+.full-product-item__faq-link {
+    color: coral;
+}
+.full-product-item__phone {
+    color: coral;
+    font-weight: 600;
 }
 .shake {
     animation: shake 1s cubic-bezier(.36,.07,.19,.97) both;
