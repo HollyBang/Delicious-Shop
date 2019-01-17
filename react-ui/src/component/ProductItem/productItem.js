@@ -16,7 +16,7 @@ const productItem = (props) => {
             </div>
             <div className="product-item__controls">
                 {/* <a className="product-item__btn" href="#">More</a> */}
-                <NavLink to={`./${data.id}`} exact>More</NavLink>
+                <NavLink to={`./${data.id}`} exact className="product-item__btn">More</NavLink>
                 <a className="product-item__btn" href="#">Add to bag</a>
                 
             </div>
