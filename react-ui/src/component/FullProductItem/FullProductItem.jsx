@@ -32,7 +32,7 @@ class FullProductItem extends Component {
           <p className="full-product-item__status">{item.status}</p>
           <h5 className="full-product-item__description">{item.description}</h5>
           <div className="full-product-item__buy-wrapper">
-          <a href="#" className="full-product-item__buy-btn shake">PUT TO BAG</a>
+          <a href="#" data-itemFullId={item.id} className="full-product-item__buy-btn shake">PUT TO BAG</a>
           </div>
           </div>
             {/* <div>hi, im product {this.props.match.params.productId}</div> */}
