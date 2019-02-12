@@ -3,6 +3,7 @@ import StartSlider from "../../component/Slider/slider";
 import StartPageGrid from "../../component/StartPageGrid/startPageGrid";
 import './startPage.css';
 import ProductItem from '../../component/ProductItem/productItem'
+import bg_img from '../../assets/img/mp-bg.jpg'
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
@@ -34,13 +35,25 @@ class StartPage extends Component {
         let maiPageItem = this.props.ProductListOnMain.productItemMainPage.map(data => {
             return <ProductItem data={data} grid="product-item__columns_4" key={data.id} />
         })
+        var sectionStyle = {
+            backgroundImage: `url(${bg_img})`
+          };
         return (
-            <div className="main-content__wrapper">
-                <StartSlider />
-                <h3 className="main-content__title">Our Products</h3>
-                <StartPageGrid>
-                    {maiPageItem}
-                </StartPageGrid>
+            <div>
+                <div className="header__greeting-wr">
+                    <div style={ sectionStyle } className="header__greetings-img-wr">
+                        <h2 className="header__greetings-text">Welcome,dear friend to</h2>
+                        <h1 className="header__title-pt1">Delicious</h1>
+                        <h2 className="header__title-pt2">SHOP</h2>
+                    </div>
+                </div>
+                <div className="main-content__wrapper">
+                    {/* <StartSlider /> */}
+                    <h3 className="main-content__title">Our Products</h3>
+                    <StartPageGrid>
+                        {maiPageItem}
+                    </StartPageGrid>
+                </div>
             </div>
         );
     }

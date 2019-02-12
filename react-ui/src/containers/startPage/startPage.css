@@ -3,3 +3,72 @@
     font-size: 1.5rem;
     margin-top: 35px;
 }
+.header__greetings-img-wr {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position-y: 95%;
+}
+.header__greetings-text {
+    font-family: Love Ya Like A Sister;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 132px;
+    font-size: 147px;
+    text-align: center;
+    color: #DFA51E;
+    width: 1100px;
+    margin: 0 auto;
+    padding-top: 15px;
+}
+.header__title-pt1 {
+    font-family: Love Ya Like A Sister;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 178px;
+    color: #FFFFFF;
+    text-align: center;
+}
+.header__title-pt2 {
+    font-family: Love Ya Like A Sister;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 180px;
+    color: #FFFFFF;
+    letter-spacing: 285px;
+    margin-left: 18%;
+    margin-top: -42px;
+}
+@media only screen and (max-width: 1450px) {
+    .header__greetings-img-wr {
+min-height: 900px;
+    }
+    .header__greetings-img-wr {
+        background-position-y: 95%;
+        background-position-x: 51%;
+    }
+    .header__title-pt2 {
+        letter-spacing: 204px;
+        margin-left: 16%;
+        margin-top: -36px;
+    }
+  }
+  @media only screen and (max-width: 1368px) {
+    .header__greetings-img-wr {
+        min-height: 768px;
+            }
+    .header__greetings-text {
+        line-height: 115px;
+    }
+    .header__title-pt1 {
+        font-size: 158px;
+    }
+    .header__title-pt2 {
+        margin-left: 18%;
+        margin-top: -36px;
+        letter-spacing: 194px;
+        font-size: 144px;
+    }
+  }

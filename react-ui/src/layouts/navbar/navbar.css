@@ -37,7 +37,6 @@
     border-bottom: 1px solid #80808061;
     background: #fff;
     transition: 0.3s all;
-    margin-bottom: 20px;
 }
 .navbar__title-wrapper:hover {
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 5px 9px 0 rgba(0, 0, 0, 0.19);
